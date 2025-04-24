@@ -3,6 +3,9 @@ package study.board_practice.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "board")
 @NoArgsConstructor
@@ -18,8 +21,4 @@ public class Board {
 
     private String content;
 
-    public void update(String title, String content) {
-        this.title = title;
-        this.content = content;
-    }
 }

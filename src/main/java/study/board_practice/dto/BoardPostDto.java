@@ -1,19 +1,16 @@
 package study.board_practice.dto;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import study.board_practice.entity.Board;
 
-@Getter
-@RequiredArgsConstructor
-public class BoardDto {
+@Data
+public class BoardPostDto {
 
-    private Long boardId;
     private String title;
     private String content;
 
-    public BoardDto(Board board) {
+    public BoardPostDto(Board board) {
         this.title = board.getTitle();
         this.content = board.getContent();
     }

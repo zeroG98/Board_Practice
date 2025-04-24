@@ -4,7 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import study.board_practice.dto.BoardDto;
+import study.board_practice.dto.BoardChangeDto;
+import study.board_practice.dto.BoardPostDto;
 import study.board_practice.entity.Board;
 import study.board_practice.service.BoardService;
 
@@ -28,7 +29,7 @@ public class BoardController {
 
     //게시글 작성
     @PostMapping("/write")
-    public String create(Board board) {
+    public String create(BoardPostDto board) {
         Board write = new Board();
         write.setTitle(board.getTitle());
         write.setContent(board.getContent());
@@ -65,12 +66,12 @@ public class BoardController {
 
     //게시글 수정
     @PostMapping("/{id}/edit")
-    public String edit(@PathVariable("id") Long boardId, Board board) {
+    public String edit(@PathVariable("id") Long boardId, BoardChangeDto changeDto) {
         Board change = boardService.findById(boardId);
 
-        change.setId(board.getId());
-        change.setTitle(board.getTitle());
-        change.setContent(board.getContent());
+        change.setId(changeDto.getId());
+        change.setTitle(changeDto.getTitle());
+        change.setContent(changeDto.getContent());
 
         boardService.saveBoard(change);
         return "redirect:/board";
