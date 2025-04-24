@@ -15,3 +15,7 @@
 6. [Spring MVC)게시판 만들기 - Controller 생성](https://beginner-development.tistory.com/6)
 
 7. [Spring MVC)게시판 만들기 - 웹어플리케이션 실행 및 부족한 점 고찰](https://beginner-development.tistory.com/7)
+
+8. [@PathVariable과 @RequestParam의 차이에 대한 공부](https://beginner-development.tistory.com/8)
+
+9. [Spring MVC)게시판 만들기 - DTO 추가](https://beginner-development.tistory.com/9)
